@@ -1,0 +1,37 @@
+#dp{
+    width: 28px;
+    border: 2px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -1.2vh;
+    margin-left: -4vw;
+    height: 6vh;
+}
+
+.headermain{
+    background-color: blue;
+    display: flex;
+}
+
+.home{
+    background-color: yellow;
+    width: 50vw;
+}
+
+.user{
+    background-color: red;
+    width: 50vw;
+    display: flex;
+    justify-content: flex-end;
+    height: 7vh;
+}
+
+.vspace{
+    margin-left :5vw;
+}
+
+.username{
+    margin-top: 20px;
+    position: relative;
+    top:1.5vh;
+}
