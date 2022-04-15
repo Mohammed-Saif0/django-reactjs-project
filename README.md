@@ -7,3 +7,4 @@ Requirements..
 4-> Simple-jwt (pip install djangorestframework-simplejwt)
 5-> Node
 6-> React Scripts (npm install react-scripts)
+7-> Corsheaders (pip install django-cors-headers)
