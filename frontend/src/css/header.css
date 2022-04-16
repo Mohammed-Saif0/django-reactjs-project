@@ -1,16 +1,20 @@
 #dp{
-    width: 28px;
-    border: 2px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: -1.2vh;
-    margin-left: -4vw;
-    height: 6vh;
+    max-width: 25px;
+    max-height: 25px;
+    vertical-align: middle;
+    border-radius: 54%;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px grey;
+    max-height: 25px;
+    height: 25px;
+    width: 25px
 }
 
 .headermain{
     background-color: blue;
     display: flex;
+    align-items: center;
 }
 
 .home{
@@ -34,4 +38,34 @@
     margin-top: 20px;
     position: relative;
     top:1.5vh;
+}
+
+
+.dropdown-content{
+    position: absolute;
+    position: absolute;
+    right: 1vw;
+    top: 6vh;
+    box-shadow: 7px 24px 11px 28px lightgrey;
+    color: black;
+    background: lightgrey;
+    z-index: -1;
+}
+
+
+.dropdown-list{
+    position: relative;
+    top :100px;
+   color:red;
+}
+
+.button{
+    background-color: red;
+    position: absolute;
+    bottom:18vh;
+    border: none;
+}
+
+.button:hover{
+    background-color: lightcoral;
 }

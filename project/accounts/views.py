@@ -29,3 +29,4 @@ def signup(request):
         obj.is_valid(raise_exception=True)
         obj.save()
         return Response(obj.data)
+

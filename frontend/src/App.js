@@ -6,6 +6,7 @@ import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Header from './components/Header'
 import PrivateRoute from './utils/PrivateRoute';
 import  {AuthProvider}  from './context/AuthContext';
+
 function App() {
   return (
 <div className='main'>
