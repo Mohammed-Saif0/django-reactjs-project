@@ -41,31 +41,23 @@
 }
 
 
-.dropdown-content{
-    position: absolute;
-    position: absolute;
-    right: 1vw;
-    top: 6vh;
-    box-shadow: 7px 24px 11px 28px lightgrey;
-    color: black;
-    background: lightgrey;
-    z-index: -1;
-}
 
 
 .dropdown-list{
     position: relative;
-    top :100px;
+    top :13vh;
    color:red;
 }
 
 .button{
     background-color: red;
     position: absolute;
-    bottom:18vh;
+    bottom: 12vh;
     border: none;
+    right: 1vw;
 }
 
 .button:hover{
     background-color: lightcoral;
 }
+

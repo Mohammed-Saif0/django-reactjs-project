@@ -17,17 +17,17 @@ const Header = () => {
 
                 <div className='insideUser'>
                     {user ? (
-                        <span className="username"> {user && <span> <span className='main_username'>{user.username}</span> <span className="vspace"></span>
+                        <span className="username"> {user && <span> <span className='main_username'></span> <span className="vspace"></span>
 
                             <Dropdown className='dropdown-list'>
-                                <Dropdown.Toggle variant="success" className='button'  
-                                id="dropdown-basic">
+                                <Dropdown.Toggle variant="alert" className='button'  
+                                id="dropdown-basic-red">
                                     <img id="dp" src={require("../../../project" + user.profile_pic)} alt="This is the profile pic" />
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
+                                    <Dropdown.Item>{user.username}</Dropdown.Item>
                                     <Dropdown.Item onClick={logoutuser}>LOGOUT</Dropdown.Item>
-
                                 </Dropdown.Menu>
                             </Dropdown>
 
