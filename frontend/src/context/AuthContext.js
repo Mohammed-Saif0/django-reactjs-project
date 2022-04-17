@@ -1,7 +1,7 @@
 import React, {createContext,useState ,useEffect} from 'react'
 import jwt_decode from "jwt-decode";
 import {useNavigate} from 'react-router-dom'
- 
+import axios from 'axios'
 
 const AuthContext = createContext()
 
@@ -14,6 +14,7 @@ export const AuthProvider = ({children}) =>{
     let[user,setUser] = useState( ()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null)
     let[loading,setLoading] = useState(true)
     const[selectedFile,setSelectedFile] = useState();
+    const[friend,setFriend] = useState();
     //This will be used further still under development
     const[isFilePicked,setIsFilePicked] = useState(false);
     let navigate = useNavigate()
@@ -43,6 +44,7 @@ export const AuthProvider = ({children}) =>{
         } 
     }
 
+    
 
 //This function will be used further still under development
     const changeHandler = (e) => {
@@ -131,12 +133,22 @@ export const AuthProvider = ({children}) =>{
         },[authTokens,loading])
 
 
+        //Function to get friends by user name
+        const FriendListSearch = () =>{
+                 axios.get(`http://localhost:8000/chat/${user.user_id}/`).then((response)=>{
+                    setFriend(response.data)
+                    console.log(friend)
+                })
+        }
+
         //This is sending context to the other components
         let contextData = {
             user:user,
             loginUser:loginUser,
             logoutuser: logoutuser,
-            signup:signup
+            FriendListSearch:FriendListSearch,
+            signup:signup,
+            friend :friend
         }
 
 

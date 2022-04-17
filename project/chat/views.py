@@ -8,14 +8,14 @@ from rest_framework.response import Response
 
 
 @api_view(['POST','GET'])
-def Friend_list(request):
+def Friend_list(request,pk):
     if request.method == 'POST':
         obj = FriendListSer(data = request.data)
         obj.is_valid(raise_exception=True)
         obj.save()
         return Response({"mesage":"done"})
     if request.method == 'GET':
-        obj = FriendList.objects.all()
+        obj = FriendList.objects.filter(user_one = pk) | FriendList.objects.filter(user_two = pk)
         sera = FriendListSer(obj,many=True)
         return Response(sera.data)
         

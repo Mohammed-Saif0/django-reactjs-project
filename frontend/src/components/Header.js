@@ -6,18 +6,26 @@ import AuthContext from '../context/AuthContext'
 import '../css/header.css'
 
 const Header = () => {
-    let { user, logoutuser } = useContext(AuthContext)
+
+    let { user, logoutuser,FriendListSearch } = useContext(AuthContext)
     return (
         <div className='headermain'>
             <div className='home'>
                 <Link to="/">Home</Link>
+                <Link to="/FriendList" onClick={FriendListSearch} >FriendList</Link>
+            
             </div>
             <div className='user'>
 
 
                 <div className='insideUser'>
                     {user ? (
+
                         <span className="username"> {user && <span> <span className='main_username'></span> <span className="vspace"></span>
+
+
+
+
 
                             <Dropdown className='dropdown-list'>
                                 <Dropdown.Toggle variant="alert" className='button'  
@@ -30,6 +38,7 @@ const Header = () => {
                                     <Dropdown.Item onClick={logoutuser}>LOGOUT</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
+
 
                         </span>}
 

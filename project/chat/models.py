@@ -7,3 +7,6 @@ class FriendList(models.Model):
     user_two =models.ForeignKey(User,on_delete=models.CASCADE,related_name="user_two",default=None)
     is_block =models.BooleanField(default="False")
 
+    def __str__(self):
+        return str(self.user_one)
+

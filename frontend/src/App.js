@@ -1,7 +1,8 @@
 import './css/App.css'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
-import Signup from './pages/Signup';
+import Signup from './pages/Signup'
+import FriendList from './pages/FriendList'
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Header from './components/Header'
 import PrivateRoute from './utils/PrivateRoute';
@@ -20,6 +21,7 @@ function App() {
         <Route  path="/"   element={<PrivateRoute>  <HomePage /> </PrivateRoute>}/>
             <Route path='/login' element = {<LoginPage/>} />
             <Route path = "/signup" element={<Signup/>} />
+            <Route path="/FriendList" element={<PrivateRoute><FriendList/></PrivateRoute>} />
         </Routes>
         </AuthProvider>
 
