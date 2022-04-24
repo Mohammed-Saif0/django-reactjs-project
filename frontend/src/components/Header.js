@@ -11,8 +11,9 @@ const Header = () => {
     return (
         <div className='headermain'>
             <div className='home'>
-                <Link to="/">Home</Link>
-                <Link to="/FriendList" onClick={FriendListSearch} >FriendList</Link>
+                <Link to="/">Home</Link><span> </span>
+                <Link to="/FriendList" onClick={FriendListSearch} >FriendList</Link><span> </span>
+                <Link to="/change_profile" >Change Profile</Link>
             
             </div>
             <div className='user'>
@@ -22,10 +23,6 @@ const Header = () => {
                     {user ? (
 
                         <span className="username"> {user && <span> <span className='main_username'></span> <span className="vspace"></span>
-
-
-
-
 
                             <Dropdown className='dropdown-list'>
                                 <Dropdown.Toggle variant="alert" className='button'  

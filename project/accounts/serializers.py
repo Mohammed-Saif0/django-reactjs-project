@@ -1,4 +1,5 @@
 
+from pyexpat import model
 from rest_framework import serializers
 from .models import User
 
@@ -16,3 +17,9 @@ class UserSerializres(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+
+class profileSer(serializers.ModelSerializer):
+    profile_pic = serializers.ImageField()
+    class Meta:
+        model = User
+        fields = ['profile_pic']

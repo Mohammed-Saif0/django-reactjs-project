@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/token/', MyTokenObtainPairView.as_view(), name='MyTokenObtainPairView'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('signup/',views.signup,name = "signup"),
+    path('change_profile/',views.change_profile,name = "change_profile"),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

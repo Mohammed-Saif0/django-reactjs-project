@@ -1,0 +1,25 @@
+.right-side{
+    background-color: blue;
+    align-items: left;
+}
+
+.left-side
+{
+    background-color: red;
+    align-items: right;
+}
+
+.main-left{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-right{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.messages{
+    margin-left: 50px;
+    margin-right: 50px;
+}

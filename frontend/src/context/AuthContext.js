@@ -13,10 +13,8 @@ export const AuthProvider = ({children}) =>{
     let[authTokens,setAuthTokens] = useState( ()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null )
     let[user,setUser] = useState( ()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null)
     let[loading,setLoading] = useState(true)
-    const[selectedFile,setSelectedFile] = useState();
     const[friend,setFriend] = useState();
-    //This will be used further still under development
-    const[isFilePicked,setIsFilePicked] = useState(false);
+    const[profile_pic,setProfile_pic] = useState();
     let navigate = useNavigate()
 
 
@@ -47,13 +45,24 @@ export const AuthProvider = ({children}) =>{
     
 
 //This function will be used further still under development
-    const changeHandler = (e) => {
-        setSelectedFile(e.target.files[0]);
-        setSelectedFile(true)
-        const formData = new FormData();
-        formData.append('File',selectedFile);
-
-    }
+const profile_changer = (e) =>{
+    e.preventDefault();
+    setProfile_pic(e.target.profile_pic.file);
+    const id = user.user_id;
+    let form_data =new FormData()
+    // form_data.append('user_id',id);  
+    form_data.append('profile_pic',profile_pic);
+    let url = "http://localhost:8000/change_profile/"
+    axios.post(url, form_data, {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      })
+          .then(res => {
+            console.log(res.data);
+          })
+          .catch(err => console.log(err))
+}
 
 
 
@@ -147,6 +156,7 @@ export const AuthProvider = ({children}) =>{
             loginUser:loginUser,
             logoutuser: logoutuser,
             FriendListSearch:FriendListSearch,
+            profile_changer: profile_changer,
             signup:signup,
             friend :friend
         }
