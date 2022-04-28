@@ -1,5 +1,4 @@
-from statistics import mode
-from tkinter import CASCADE
+
 from django.db import models
 from accounts.models import User
 from datetime import datetime
