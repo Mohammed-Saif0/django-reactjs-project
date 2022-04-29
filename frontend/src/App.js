@@ -9,6 +9,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import  {AuthProvider}  from './context/AuthContext';
 import Change_profile from './pages/Change_profile'
 import Messgaes from './pages/Messages'
+import AddFriend from './pages/AddFriend'
 function App() {
   return (
 <div className='main'>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/FriendList" element={<PrivateRoute><FriendList/></PrivateRoute>} />
             <Route path = "/change_profile" element={<PrivateRoute> <Change_profile />   </PrivateRoute>} />
             <Route path= "/messages/:id" element = {<Messgaes/>}/>
+            <Route path= "/addfriends" element={<AddFriend/>}/>
         </Routes>
         </AuthProvider>
 

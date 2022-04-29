@@ -1,7 +1,8 @@
 from .models import FriendList,Chats
 from rest_framework.decorators import api_view
-from .ser import FriendListSer,ChatsSer,GetChatsSer
+from .ser import FriendListSer,ChatsSer,GetChatsSer,UserSer
 from rest_framework.response import Response
+from accounts.models import User
 # Create your views here.
 
 
@@ -29,6 +30,16 @@ def getChats(request,pk):
         obj.is_valid(raise_exception=True)
         obj.save()
         return Response({"mesage":"done"})
+
+
+
+@api_view(['GET'])
+def getUser(request,username):
+    if request.method == 'GET':
+        obj = User.objects.filter(username = username).first()
+        ser = UserSer(obj,many = False)
+        return Response(ser.data)  
+
 
 
         

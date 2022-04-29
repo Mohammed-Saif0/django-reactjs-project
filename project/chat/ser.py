@@ -1,7 +1,9 @@
 from dataclasses import field
 import profile
+from pyexpat import model
 from rest_framework import serializers
 from .models import FriendList,Chats
+from accounts.models import User
 
 class FriendListSer(serializers.ModelSerializer):
     class Meta:
@@ -21,3 +23,7 @@ class GetChatsSer(serializers.ModelSerializer):
         model = Chats
         fields = '__all__'
 
+class UserSer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['profile_pic','first_name','last_name','username']

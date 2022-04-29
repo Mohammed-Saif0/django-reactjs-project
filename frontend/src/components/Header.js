@@ -13,6 +13,7 @@ const Header = () => {
             <div className='home'>
                 <Link to="/">Home</Link><span> </span>
                 <Link to="/FriendList" onClick={FriendListSearch} >FriendList</Link><span> </span>
+                <Link to="/addfriends" >Add Friend</Link>
                 <Link to="/change_profile" >Change Profile</Link>
             
             </div>

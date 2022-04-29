@@ -56,56 +56,38 @@ const Messgaes = () => {
 
 
 
-    return ( <
-        div > { user.user_id } {
-            getmessages ? < div > {
-                    getmessages.map((something) => {
-                        return <div className = 'messages' > {
-                                something.sent_by === user.user_id ?
-                                <
-                                div className = 'main-left' >
-                                <
-                                div className = 'left-side' > { something.message } <
-                                /div> < /
-                                div > :
-                                    <
-                                    div className = 'main-right' >
-                                    <
-                                    div className = 'right-side' >
-                                    <
-                                    img id = "dp"
-                                src = { require("../../../project" + something.profile_pic_sent_by) }
-                                alt = "This is the profile pic" / > { something.message } <
-                                /div> < /
-                                div >
+    return (<div> {user.user_id} {
+        getmessages ? <div> {
+            getmessages.map((something) => {
+                return <div className='messages'> {
+                    something.sent_by === user.user_id ?
+                        <div className='main-left' >
+                            <div className='left-side' > {something.message} </div> </div > :
+                        <div className='main-right'>
+                            <div className='right-side'>
+                                <img id="dp"
+                                    src={require("../../../project" + something.profile_pic_sent_by)}
+                                    alt="This is the profile pic" /> {something.message} </div> </div>
 
-                            } <
-                            /div>
-                    })
-                } <
-                /div> : <p> </p >
-        }
+                } </div>
+            })
+        } </div> : <p> </p >
+    }
 
-        <
-        div >
-        <
-        form onSubmit = { submit } >
-        <
-        input type = "text"
-        name = "sendMessage"
-        onChange = { updateMessage }
-        /> <
-        input type = "submit"
-        value = "Send" / >
-        <
-        /form> < /
-        div > <
-        /div>
+        <div>
+            <form onSubmit={submit}>
+                <
+                    input type="text"
+                    name="sendMessage"
+                    onChange={updateMessage}
+                /> <
+                    input type="submit"
+                    value="Send" />
+            </form> </div> </div>
     )
 
 
 }
-
 
 
 
