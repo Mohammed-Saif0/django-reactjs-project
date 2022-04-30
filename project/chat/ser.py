@@ -26,4 +26,10 @@ class GetChatsSer(serializers.ModelSerializer):
 class UserSer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['profile_pic','first_name','last_name','username']
+        fields = ['profile_pic','first_name','last_name','username','id']
+
+
+class FriendRequestSer(serializers.ModelSerializer):
+    class Meta:
+        model = FriendList
+        fields = "__all__"

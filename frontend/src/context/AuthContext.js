@@ -13,8 +13,8 @@ export const AuthProvider = ({children}) =>{
     let[authTokens,setAuthTokens] = useState( ()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null )
     let[user,setUser] = useState( ()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')): null)
     let[loading,setLoading] = useState(true)
+    let[friends,setFriends]=useState()
     
-    const[friend,setFriend] = useState();
     const[profile_pic,setProfile_pic] = useState();
     let navigate = useNavigate()
 
@@ -144,12 +144,11 @@ const profile_changer = (e) =>{
 
 
         //Function to get friends by user name
-        const FriendListSearch = () =>{
-                 axios.get(`http://localhost:8000/chat/${user.user_id}/`).then((response)=>{
-                    setFriend(response.data)
-                    console.log(friend)
-                })
+        const searchFriends = () =>{
+            axios.get(`http://localhost:8000/chat/${user.user_id}/`)
+                .then(res=>setFriends(res.data))
         }
+    
         
 
         //This is sending context to the other components
@@ -157,10 +156,10 @@ const profile_changer = (e) =>{
             user:user,
             loginUser:loginUser,
             logoutuser: logoutuser,
-            FriendListSearch:FriendListSearch,
             profile_changer: profile_changer,
             signup:signup,
-            friend :friend,
+            searchFriends:searchFriends,
+            friends:friends,
         }
 
 

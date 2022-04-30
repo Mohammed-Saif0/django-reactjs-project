@@ -3,14 +3,14 @@ import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
 const FriendList = () =>{
 
-    let {friend,user} = useContext(AuthContext)
+    let {friends,user} = useContext(AuthContext)
 
     return(
         <div>
            <h1>Your friends</h1>
-            {friend ? <div>
+            {friends ? <div>
                 {
-                    friend.map((something)=>{
+                    friends.map((something)=>{
                        return <div> {something.user_one.username !== user.username ? <div>
                            
                            
@@ -23,14 +23,14 @@ const FriendList = () =>{
 
                             {something.user_one.id }
                      
-                       <Link to={`/messages/${something.user_one.id}`} >messages</Link>
+                       <Link to={`/messages/${something.user_one.id}/${something.user_two.id}`} >messages</Link>
                        {/* <button data = {something.user_one} component = {Link} to ="/messages    ">Message</button> */}
                        </div>
                        : <p>{something.user_two.username} 
                              <img id="dp" src={require("../../../project" + something.user_two.profile_pic)} alt="This is the profile pic" /> 
                              {something.user_one.id }
                      
-                       <Link to={`/messages/${something.user_two.id}`} >messages</Link>
+                       <Link to={`/messages/${something.user_two.id}/${something.user_one.id}`} >messages</Link>
                        </p>}
 
 

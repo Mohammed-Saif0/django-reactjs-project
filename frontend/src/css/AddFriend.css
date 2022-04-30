@@ -1,0 +1,26 @@
+#friendimg {
+    max-width: 117px;
+    max-height: 25px;
+    vertical-align: middle;
+    border-radius: 25%;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px grey;
+    max-height: 123px;
+    height: 114px;
+    width: 119px;
+}
+
+.searched {
+    max-width: 117px;
+    margin-top: 3vh;
+    vertical-align: middle;
+    border-radius: 26%;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px grey;
+    max-height: 120px;
+    height: 112px;
+    width: 191px;
+    margin-left: 2vw;
+}

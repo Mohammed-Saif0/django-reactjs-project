@@ -6,13 +6,13 @@ import '../css/Messages.css'
 
 const Messgaes = () => {
 
-    const { id } = useParams();
+    const { id, id2 } = useParams();
     let sending = id
     let { user } = useContext(AuthContext)
     const [getmessages, setGetmessages] = useState();
     const [sendMessages, setSendMessages] = useState("");
 
-    const url = `http://localhost:8000/chat/message/${id}/`
+    const url = `http://localhost:8000/chat/message/${id}/${id2}`
 
     const submit = (e) => {
         e.preventDefault()
@@ -56,34 +56,42 @@ const Messgaes = () => {
 
 
 
-    return (<div> {user.user_id} {
-        getmessages ? <div> {
-            getmessages.map((something) => {
-                return <div className='messages'> {
-                    something.sent_by === user.user_id ?
-                        <div className='main-left' >
-                            <div className='left-side' > {something.message} </div> </div > :
-                        <div className='main-right'>
-                            <div className='right-side'>
-                                <img id="dp"
-                                    src={require("../../../project" + something.profile_pic_sent_by)}
-                                    alt="This is the profile pic" /> {something.message} </div> </div>
+    return ( < div > { user.user_id } {
+            getmessages ? < div > {
+                getmessages.map((something) => {
+                    return <div className = 'messages' > {
+                        something.sent_by === user.user_id ?
+                        <
+                        div className = 'main-left' >
+                        <
+                        div className = 'left-side' > { something.message } < /div> </div > :
+                            <
+                            div className = 'main-right' >
+                            <
+                            div className = 'right-side' >
+                            <
+                            img id = "dp"
+                        src = { require("../../../project" + something.profile_pic_sent_by) }
+                        alt = "This is the profile pic" / > { something.message } < /div> </div >
 
-                } </div>
-            })
-        } </div> : <p> </p >
-    }
+                    } < /div>
+                })
+            } < /div> : <p> </p >
+        }
 
-        <div>
-            <form onSubmit={submit}>
-                <
-                    input type="text"
-                    name="sendMessage"
-                    onChange={updateMessage}
-                /> <
-                    input type="submit"
-                    value="Send" />
-            </form> </div> </div>
+        <
+        div >
+        <
+        form onSubmit = { submit } >
+        <
+        input type = "text"
+        name = "sendMessage"
+        onChange = { updateMessage }
+        /> <
+        input type = "submit"
+        value = "Send" / >
+        <
+        /form> </div > < /div>
     )
 
 

@@ -1,4 +1,5 @@
 
+from enum import unique
 from django.db import models
 from accounts.models import User
 from datetime import datetime
@@ -10,6 +11,8 @@ class FriendList(models.Model):
 
     def __str__(self):
         return str(self.user_one)
+    class Meta:
+        unique_together = ['user_one','user_two']
 
 
 class Chats(models.Model):

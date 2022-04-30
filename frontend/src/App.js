@@ -25,7 +25,7 @@ function App() {
             <Route path = "/signup" element={<Signup/>} />
             <Route path="/FriendList" element={<PrivateRoute><FriendList/></PrivateRoute>} />
             <Route path = "/change_profile" element={<PrivateRoute> <Change_profile />   </PrivateRoute>} />
-            <Route path= "/messages/:id" element = {<Messgaes/>}/>
+            <Route path= "/messages/:id/:id2" element = {<Messgaes/>}/>
             <Route path= "/addfriends" element={<AddFriend/>}/>
         </Routes>
         </AuthProvider>
