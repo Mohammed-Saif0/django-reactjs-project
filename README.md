@@ -1,6 +1,6 @@
 # django-reactjs-project
 
-###Requirements..
+### Requirements
 - Python 3.10
 - Django 4.0 (pip install django)
 - Rest_Framework (pip install djangorestframework)
